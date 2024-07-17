@@ -21,7 +21,7 @@ byte columnPointer = 0;
 char[] acceptedChars = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
   'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
   '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
-  '!', '"', '£', '$', '%', '^', '&', '*', '(', ')', ' ', '<', '>', ',', '.', '/', '?', '#', '~', '@', ';', ':', '[', ']', '{', '}', '-', /*'=',hehehe*/ '+', '_', TAB, '|', '\\'};
+  '!', '"', '£', '$', '%', '^', '&', '*', '(', ')', ' ', '<', '>', ',', '.', '/', '?', '#', '~', '@', ';', ':', '[', ']', '{', '}', '-', /*'=',*/ '+', '_', TAB, '|', '\\'};
 
 String[] commandList =   {"echo", "help", "add", "mult", "sub", "divr", "createvm", "destroyvm", "clear", "mov", "logvm", "peek", "poke", "ldi", "lda", "pulse", "run", "instlist", "welcome"};
 int[] commandParams =    {     1,      0,     2,      2,     2,      2,          5,           0,       0,     2,       0,      1,      2,     2,     2,       1,     3,          0,         0};
@@ -53,13 +53,6 @@ public void setup() {
   textFont(mainFont);
   textSize(16);
   
-  writeText("Welcome to Convg's godawful CPU emulator/command line thing");
-  writeText("I wrote this in less than three days :(");
-  writeText("All of the help within this program is unreasonably obtuse");
-  writeText("And there is no assembler so you have to push machine code yourself >:]");
-  writeText("Also I banned all mortals from using the = sign");
-  writeText("====hahahahaha====");
-  writeText("");
   writeText("Type 'help' for a list of commands");
   writeText("Type 'instlist' for a list of available CPU instructions");
   writeText("Type 'welcome' to see this message again");
@@ -639,13 +632,6 @@ public void executeCommand(int commandPointer, String[] parameters) {
     columnPointer = 0;
     rowPointer = 0;
     
-    writeText("Welcome to Convg's godawful CPU emulator/command line thing");
-    writeText("I wrote this in less than three days :(");
-    writeText("All of the help within this program is unreasonably obtuse");
-    writeText("And there is no assembler so you have to push machine code yourself >:]");
-    writeText("Also I banned all mortals from using the = sign");
-    writeText("====hahahahaha====");
-    writeText("");
     writeText("Type 'help' for a list of commands");
     writeText("Type 'instlist' for a list of available CPU instructions");
     writeText("Type 'welcome' to see this message again");
@@ -1129,7 +1115,6 @@ class VM {
     writeText("done");
   }
 }
-
   public void settings() {  size(1280, 640); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "cmdthingy" };
